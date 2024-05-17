@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css" >
+    <title> Software-Med Blog || <%= title %></title>
+  </head>
+  <body>
+    <%- include("./partials/Header.ejs") %> 
+    <section class="hero">
+      <div class="hero-box">
+        <div class="hero-desc">
+          <h3 class="hero-text">Hey there!!!, Welcome to Med Blog</h3>
+          <p class="hero-text">Explore our Curated collection
+          of news on tech and fashion.</p>
+        </div>
+      </div>
+    </section>
+    
+    <section class="main container">
+      <p class="section-subtitle">
+              Get started with our <strong class="strong">Latest stories</strong>
+            </p>
+      <div class="main-scroll">
+          <% if (blogs.length) { %>
+        <% rand(blogs, 15).map((e, i) => { %>
+          <div class="scroll-item">
+            <div class="main-img-card">
+             <img class="img-cover" src=<%= e.urlToImage %> alt=<%= e.title %>
+             />
+              <ul class="authors">
+                <li class="author"><img class="auth-img"
+                src="/recommended-6.jpg" alt="" /></li>
+                <li class="author"><img class="auth-img"
+                src="/newsletter.png" alt="" /></li>
+              </ul>
+            </div>
+            <div class="desc-card">
+              <ul class="tags">
+                <li class="tag">Tech</li>
+                <li class="tag">Fashion</li>
+              </ul>
+              <h3 class="h4">
+              <a href=<%= `/blog/${e.id}` %>>
+                <%= e.title %>
+              </a>
+            </h3>
+            <p>
+              <%= e.description %>
+            </p>
+            </div>
+          </div>
+          <% }) %>
+        <% }else { %>
+          <p class="section-subtitle">No blogs</p>
+        <% }%>
+        </div>
+    </section>
+    
+ <section class="scroll container">
+     <p class="section-subtitle">Check out Some <strong>Highlighted stories</strong></p>
+    <div class="has-scrollbar">
+    <% if (blogs.length) { %>
+    <% rand(blogs, 6).map((i) => { %>
+    <div class="scroll-item">
+        <div class="img-card">
+         <img class="img-cover" src=<%= i.urlToImage %> alt=<%= i.title %> />
+          <ul class="authors">
+            <li class="author"><img class="auth-img"
+                src="/recommended-6.jpg" alt="" /></li>
+            <li class="author"><img class="auth-img"
+                src="/newsletter.png" alt="" /></li>
+          </ul>
+        </div>
+        <div class="desc-card">
+          <ul class="tags">
+            <li class="tag">Tech</li>
+            <li class="tag">Fashion</li>
+          </ul>
+          <h3 class="h4">
+          <a href=<%= `/blog/${i.id}` %>>
+            <%= i.title %>
+          </a>
+        </h3>
+        </div>
+    </div>
+    <% }) %>
+    <% }else { %>
+      <p class="section-subtitle">No blogs</p>
+    <% }%>
+    </div>
+   </section>
+      
+  <%- include("./partials/Footer.ejs") %>
+
+  </body>
+</html>
