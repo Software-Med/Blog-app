@@ -55,3 +55,5 @@ app.get("/blogs", (req, res) => {
 app.use((req, res) => {
   res.status(404).send("error 404")
 })
+
+module.exports = app
