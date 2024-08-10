@@ -31,12 +31,6 @@ async function getArticles () {
 
 // getArticles()
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  getArticles()
-  console.log(`App is listening on port ${port}...`)
-  
-});
 
 app.get("/", (req, res) => {
   res.render("index", {title: "Home", blogs, rand})
@@ -55,5 +49,12 @@ app.get("/blogs", (req, res) => {
 app.use((req, res) => {
   res.status(404).send("error 404")
 })
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  getArticles()
+  console.log(`App is listening on port ${port}...`)
+  
+});
 
 module.exports = app
