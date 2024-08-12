@@ -7,7 +7,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 const url =
-"https://newsapi.org/v2/top-headlines?country=us&apiKey=7951be79a6c041c19329b686edd325d0";
+"https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=7951be79a6c041c19329b686edd325d0";
 
 let blogs = [];
 const rand = (d, e) => {
