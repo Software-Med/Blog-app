@@ -97,9 +97,11 @@ nav {
   gap: 10px;
 }
 .nav h2 a {
-  font-size: 12px;
   margin: 0;
   padding: 0;
+}
+.nav h2 a {
+  font-size: 12px;
 }
 button {
   margin: 0;
