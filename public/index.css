@@ -96,7 +96,7 @@ nav {
   display: flex;
   gap: 10px;
 }
-.nav h2 {
+.nav h2 a {
   font-size: 10px;
   margin: 0;
   padding: 0;
