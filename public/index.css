@@ -96,12 +96,12 @@ nav {
   display: flex;
   gap: 10px;
 }
-.nav h2 a {
+.nav h2 {
   margin: 0;
   padding: 0;
 }
 .nav h2 a {
-  font-size: 12px;
+  font-size: 13px;
 }
 button {
   margin: 0;
